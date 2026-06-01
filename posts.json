@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "title": "Odstávka vody - Táborská 940/31",
+    "description": "Informujeme nájemníky o plánované odstávce teplé a studené vody z důvodu havarijní opravy hlavního uzávěru.",
+    "type": "urgent",
+    "icon": "water_damage",
+    "date": "15. března 2025",
+    "time": "08:00 - 16:00",
+    "location": null,
+    "attachment": {
+      "name": "Plán opravy a zákres.pdf",
+      "size": "840 KB",
+      "url": "#",
+      "format": "pdf"
+    }
+  },
+  {
+    "id": 2,
+    "title": "Modernizace osvětlení společných prostor",
+    "description": "V průběhu příštího týdne dojde k výměně stávajících svítidel v chodbách za úsporné LED panely s pohybovými senzory. Prosíme o strpění zvýšeného pohybu řemeslníků.",
+    "type": "info",
+    "icon": "lightbulb",
+    "date": "22. - 26. března 2025",
+    "time": null,
+    "location": null,
+    "attachment": {
+      "name": "Harmonogram_praci.docx",
+      "size": "1.2 MB",
+      "url": "#",
+      "format": "docx"
+    }
+  },
+  {
+    "id": 3,
+    "title": "Přistavení kontejneru na objemný odpad",
+    "description": "Město Kutná Hora zajistilo přistavení velkoobjemového kontejneru pro jarní úklid sklepů a domácností. Kontejner bude umístěn u zadního vchodu do objektu.",
+    "type": "notice",
+    "icon": "delete_sweep",
+    "date": "5. dubna 2025",
+    "time": null,
+    "location": "Táborská - parkoviště",
+    "attachment": {
+      "name": "Seznam_povolenych_odpadu.pdf",
+      "size": "320 KB",
+      "url": "#",
+      "format": "pdf"
+    }
+  }
+]

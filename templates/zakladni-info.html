@@ -1,0 +1,120 @@
+{% extends "base.html" %}
+{% block title %}Základní informace – BD Residence Mlýnská{% endblock %}
+{% block body_class %}bg-surface text-on-surface antialiased{% endblock %}
+
+{% block content %}
+
+<button class="fixed left-0 top-1/2 -translate-y-1/2 z-50 bg-primary text-white p-3 rounded-r-xl shadow-lg hover:pr-5 transition-all active:scale-95 duration-200 flex items-center justify-center" onclick="window.location.href='{% url 'index' %}'">
+  <span class="material-symbols-outlined">arrow_back</span>
+</button>
+
+<main class="pt-24 pb-20 px-4 md:px-8 max-w-7xl mx-auto">
+  <header class="mb-16">
+    <h1 class="text-5xl font-extrabold tracking-tight text-primary mb-4">Základní informace</h1>
+    <p class="text-on-surface-variant text-lg max-w-2xl leading-relaxed">
+      Vše důležité o Bytovém družstvu Residence Mlýnská. Stanovy, hospodaření a kontaktní údaje.
+    </p>
+  </header>
+
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+    <!-- Identifikační údaje -->
+    <section class="lg:col-span-8 bg-surface-container-lowest rounded-xl p-8 shadow-sm">
+      <h2 class="text-2xl font-bold text-primary mb-8 flex items-center gap-2">
+        <span class="material-symbols-outlined">business</span>
+        Identifikační údaje
+      </h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <div class="border-b border-outline-variant/15 pb-4">
+          <p class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant mb-1">Obchodní firma</p>
+          <p class="font-bold text-on-surface">Bytové družstvo Residence Mlýnská</p>
+        </div>
+        <div class="border-b border-outline-variant/15 pb-4">
+          <p class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant mb-1">IČO</p>
+          <p class="font-bold text-on-surface font-mono">244 48 541</p>
+        </div>
+        <div class="border-b border-outline-variant/15 pb-4">
+          <p class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant mb-1">DIČ</p>
+          <p class="font-bold text-on-surface font-mono">CZ24448541</p>
+        </div>
+        <div class="border-b border-outline-variant/15 pb-4">
+          <p class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant mb-1">Právní forma</p>
+          <p class="font-bold text-on-surface">Bytové družstvo</p>
+        </div>
+        <div class="border-b border-outline-variant/15 pb-4 sm:col-span-2">
+          <p class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant mb-1">Sídlo</p>
+          <p class="font-bold text-on-surface">—</p>
+        </div>
+        <div class="border-b border-outline-variant/15 pb-4">
+          <p class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant mb-1">Zapsáno</p>
+          <p class="font-bold text-on-surface">Obchodní rejstřík, Krajský soud Praha</p>
+        </div>
+        <div class="border-b border-outline-variant/15 pb-4">
+          <p class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant mb-1">Datová schránka</p>
+          <p class="font-bold text-on-surface font-mono">—</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bankovní spojení -->
+    <aside class="lg:col-span-4">
+      <section class="bg-primary rounded-xl p-8 text-on-primary h-full">
+        <h3 class="text-lg font-bold mb-6 flex items-center gap-2">
+          <span class="material-symbols-outlined">account_balance</span>
+          Bankovní spojení
+        </h3>
+        <div class="space-y-4">
+          <div>
+            <p class="text-on-primary/70 text-xs uppercase tracking-widest mb-1">Číslo účtu</p>
+            <p class="text-2xl font-extrabold tracking-tight font-mono">123456789/0800</p>
+          </div>
+          <div>
+            <p class="text-on-primary/70 text-xs uppercase tracking-widest mb-1">Banka</p>
+            <p class="font-bold">Česká spořitelna, a.s.</p>
+          </div>
+          <div>
+            <p class="text-on-primary/70 text-xs uppercase tracking-widest mb-1">IBAN</p>
+            <p class="font-mono text-sm">CZ00 0800 0000 0012 3456 7890</p>
+          </div>
+        </div>
+      </section>
+    </aside>
+
+    <!-- Aktuálně na nástěnce -->
+    <a href="{% url 'nastenka' %}" class="lg:col-span-8" style="text-decoration:none;color:inherit;">
+      <section class="bg-surface-container-low rounded-xl p-8 hover:bg-surface-container-high transition-colors cursor-pointer group h-full">
+        <h3 class="text-xl font-bold text-primary mb-6 flex items-center gap-2">
+          <span class="material-symbols-outlined">campaign</span>
+          Aktuálně na nástěnce
+          <span class="material-symbols-outlined ml-auto text-outline-variant group-hover:text-primary transition-colors">arrow_forward</span>
+        </h3>
+        {% if latest_post %}
+        <div class="space-y-3">
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-2xl
+              {% if latest_post.type == 'urgent' %}text-error{% elif latest_post.type == 'notice' %}text-secondary{% elif latest_post.type == 'event' %}text-tertiary{% else %}text-primary{% endif %}">{{ latest_post.icon }}</span>
+            <span class="text-[10px] font-bold uppercase tracking-widest px-2 py-0.5 rounded-full
+              {% if latest_post.type == 'urgent' %}bg-error-container text-on-error-container{% elif latest_post.type == 'notice' %}bg-secondary/10 text-secondary{% elif latest_post.type == 'event' %}bg-tertiary/10 text-tertiary{% else %}bg-primary/10 text-primary{% endif %}">
+              {{ latest_post.get_type_display }}
+            </span>
+          </div>
+          <h4 class="font-bold text-on-surface group-hover:text-primary transition-colors">{{ latest_post.title }}</h4>
+          <p class="text-sm text-on-surface-variant leading-relaxed">{{ latest_post.description|truncatechars:160 }}</p>
+          {% if latest_post.date %}
+          <p class="text-xs text-on-surface-variant flex items-center gap-1">
+            <span class="material-symbols-outlined text-sm">calendar_today</span>
+            {{ latest_post.date }}
+          </p>
+          {% endif %}
+        </div>
+        {% else %}
+        <p class="text-on-surface-variant text-sm">Žádné příspěvky na nástěnce.</p>
+        {% endif %}
+        <div class="mt-6 pt-4 border-t border-outline-variant/20 flex items-center gap-2 text-sm font-medium text-primary">
+          <span>Přejít na nástěnku</span>
+          <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">east</span>
+        </div>
+      </section>
+    </a>
+  </div>
+</main>
+{% endblock %}

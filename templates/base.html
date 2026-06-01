@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>{% block title %}BD Residence Mlýnská{% endblock %}</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          "outline-variant": "#c0c8cd",
+          "on-background": "#181c1c",
+          "on-secondary-fixed-variant": "#274482",
+          "secondary-fixed": "#d9e2ff",
+          "on-secondary": "#ffffff",
+          "surface-container-low": "#f1f4f3",
+          "tertiary-fixed-dim": "#b6c5f6",
+          "error": "#ba1a1a",
+          "surface-container-highest": "#e0e3e2",
+          "on-error-container": "#93000a",
+          "surface-container-lowest": "#ffffff",
+          "surface-container": "#ebeeed",
+          "on-secondary-fixed": "#001945",
+          "on-primary-container": "#9bd7f7",
+          "tertiary": "#304069",
+          "inverse-surface": "#2d3131",
+          "inverse-primary": "#92cfee",
+          "secondary": "#415d9b",
+          "on-primary-fixed": "#001e2b",
+          "surface": "#f7faf9",
+          "secondary-fixed-dim": "#b0c6ff",
+          "on-primary-fixed-variant": "#004d66",
+          "primary-fixed-dim": "#92cfee",
+          "on-secondary-container": "#2c4987",
+          "surface-variant": "#e0e3e2",
+          "surface-container-high": "#e6e9e8",
+          "surface-bright": "#f7faf9",
+          "on-surface-variant": "#40484d",
+          "surface-dim": "#d7dbda",
+          "on-tertiary-fixed-variant": "#36456f",
+          "outline": "#70787d",
+          "background": "#f7faf9",
+          "on-primary": "#ffffff",
+          "on-tertiary-fixed": "#071941",
+          "primary-fixed": "#c0e8ff",
+          "inverse-on-surface": "#eef1f0",
+          "tertiary-fixed": "#dae2ff",
+          "primary": "#00475e",
+          "tertiary-container": "#485782",
+          "surface-tint": "#236580",
+          "on-tertiary-container": "#bfceff",
+          "on-surface": "#181c1c",
+          "secondary-container": "#a0baff",
+          "primary-container": "#1a5f7a",
+          "on-tertiary": "#ffffff",
+          "error-container": "#ffdad6",
+          "on-error": "#ffffff"
+        },
+        fontFamily: {
+          "headline": ["Public Sans"],
+          "body": ["Public Sans"],
+          "label": ["Public Sans"]
+        },
+        borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+      },
+    },
+  }
+</script>
+<style>
+  body { font-family: 'Public Sans', sans-serif; }
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  }
+  .emergency-white, .emergency-white *, .emergency-white a,
+  .emergency-white p, .emergency-white h2, .emergency-white span {
+    color: #ffffff !important;
+  }
+  .emergency-white .opacity-80, .emergency-white p.opacity-80 {
+    color: rgba(255,255,255,0.8) !important;
+  }
+</style>
+{% block extra_head %}{% endblock %}
+</head>
+<body class="bg-surface text-on-surface {% block body_class %}{% endblock %}">
+
+<!-- Top Navigation Bar -->
+<nav class="fixed top-0 w-full z-50 bg-[#f7faf9]/80 backdrop-blur-md flex justify-between items-center px-8 h-16 shadow-none">
+  <a href="{% url 'index' %}" class="text-xl font-bold text-[#00475e] tracking-tight no-underline" style="text-decoration:none;color:#00475e;">BD Residence Mlýnská</a>
+  <div class="hidden md:flex gap-8 items-center">
+    <a href="{% url 'index' %}" class="{% if active_page == 'index' %}text-[#00475e] border-b-2 border-[#00475e] pb-1{% else %}text-[#40484d] hover:text-[#00475e]{% endif %} tracking-tight transition-colors" style="text-decoration:none;">Domů</a>
+    <a href="{% url 'nastenka' %}" class="{% if active_page == 'nastenka' %}text-[#00475e] border-b-2 border-[#00475e] pb-1{% else %}text-[#40484d] hover:text-[#00475e]{% endif %} tracking-tight transition-colors" style="text-decoration:none;">Nástěnka</a>
+    <a href="{% url 'zakladni-info' %}" class="{% if active_page == 'zakladni-info' %}text-[#00475e] border-b-2 border-[#00475e] pb-1{% else %}text-[#40484d] hover:text-[#00475e]{% endif %} tracking-tight transition-colors" style="text-decoration:none;">Info</a>
+    <a href="{% url 'kontakty' %}" class="{% if active_page == 'kontakty' %}text-[#00475e] border-b-2 border-[#00475e] pb-1{% else %}text-[#40484d] hover:text-[#00475e]{% endif %} tracking-tight transition-colors" style="text-decoration:none;">Kontakty</a>
+  </div>
+  <div class="relative items-center gap-4 flex" id="settings-container">
+    <button class="flex items-center gap-2 text-[#40484d] hover:text-[#00475e] transition-all active:opacity-70" id="settings-button">
+      <span class="material-symbols-outlined">settings</span>
+      <span class="hidden sm:inline font-medium text-sm">Nastavení</span>
+    </button>
+    <div class="hidden absolute right-0 top-full mt-2 w-48 bg-white rounded-xl shadow-xl border border-outline-variant/30 py-2 z-50" id="settings-menu">
+      <div class="px-4 py-2 text-xs font-bold text-on-surface-variant uppercase tracking-widest border-b border-outline-variant/20 mb-1">Volby</div>
+      <a href="/admin/" class="w-full flex items-center gap-3 px-4 py-2 text-sm text-on-surface hover:bg-surface-container-high transition-colors" style="text-decoration:none;display:flex;">
+        <span class="material-symbols-outlined text-lg">admin_panel_settings</span>
+        <span>Administrace</span>
+      </a>
+    </div>
+  </div>
+</nav>
+
+{% block content %}{% endblock %}
+
+<!-- Footer -->
+<footer class="w-full border-t-0 mt-20 bg-[#f1f4f3] flex flex-col md:flex-row justify-between items-center px-8 py-12 gap-4">
+  <div class="flex flex-col gap-1">
+    <span class="font-bold text-[#00475e] text-sm">Bytové družstvo Residence Mlýnská</span>
+    <p class="text-[#40484d] text-xs">© 2025 Bytové družstvo Residence Mlýnská. Všechna práva vyhrazena.</p>
+    <p class="text-[#40484d]/60 text-[10px]">IČO: 244 48 541 | DIČ: CZ24448541</p>
+  </div>
+  <div class="flex flex-wrap justify-center gap-8 text-[#40484d] text-xs">
+    <a href="{% url 'zakladni-info' %}" class="hover:text-[#00475e] transition-colors opacity-80 hover:opacity-100" style="text-decoration:none;">Ochrana údajů</a>
+    <a href="{% url 'zakladni-info' %}" class="hover:text-[#00475e] transition-colors opacity-80 hover:opacity-100" style="text-decoration:none;">Stanovy</a>
+    <a href="{% url 'kontakty' %}" class="hover:text-[#00475e] transition-colors opacity-80 hover:opacity-100" style="text-decoration:none;">Kontakt</a>
+    <a href="/admin/" class="hover:text-[#00475e] transition-colors opacity-80 hover:opacity-100" style="text-decoration:none;">Přihlášení do admin</a>
+  </div>
+</footer>
+
+<script>
+  const settingsBtn = document.getElementById('settings-button');
+  const settingsMenu = document.getElementById('settings-menu');
+
+  settingsBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    settingsMenu.classList.toggle('hidden');
+  });
+  document.addEventListener('click', () => settingsMenu.classList.add('hidden'));
+</script>
+{% block extra_js %}{% endblock %}
+</body>
+</html>
