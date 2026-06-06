@@ -25,16 +25,16 @@
           "surface-container-lowest": "#ffffff",
           "surface-container": "#ebeeed",
           "on-secondary-fixed": "#001945",
-          "on-primary-container": "#9bd7f7",
+          "on-primary-container": "#ffc4cf",
           "tertiary": "#304069",
           "inverse-surface": "#2d3131",
-          "inverse-primary": "#92cfee",
+          "inverse-primary": "#ffb3c1",
           "secondary": "#415d9b",
-          "on-primary-fixed": "#001e2b",
+          "on-primary-fixed": "#1e0009",
           "surface": "#f7faf9",
           "secondary-fixed-dim": "#b0c6ff",
-          "on-primary-fixed-variant": "#004d66",
-          "primary-fixed-dim": "#92cfee",
+          "on-primary-fixed-variant": "#4d0016",
+          "primary-fixed-dim": "#ffb3c1",
           "on-secondary-container": "#2c4987",
           "surface-variant": "#e0e3e2",
           "surface-container-high": "#e6e9e8",
@@ -46,16 +46,16 @@
           "background": "#f7faf9",
           "on-primary": "#ffffff",
           "on-tertiary-fixed": "#071941",
-          "primary-fixed": "#c0e8ff",
+          "primary-fixed": "#ffd9e0",
           "inverse-on-surface": "#eef1f0",
           "tertiary-fixed": "#dae2ff",
-          "primary": "#00475e",
+          "primary": "#7b2d40",
           "tertiary-container": "#485782",
-          "surface-tint": "#236580",
+          "surface-tint": "#7b2d40",
           "on-tertiary-container": "#bfceff",
           "on-surface": "#181c1c",
           "secondary-container": "#a0baff",
-          "primary-container": "#1a5f7a",
+          "primary-container": "#8c3b50",
           "on-tertiary": "#ffffff",
           "error-container": "#ffdad6",
           "on-error": "#ffffff"
@@ -89,15 +89,15 @@
 
 <!-- Top Navigation Bar -->
 <nav class="fixed top-0 w-full z-50 bg-[#f7faf9]/80 backdrop-blur-md flex justify-between items-center px-8 h-16 shadow-none">
-  <a href="{% url 'index' %}" class="text-xl font-bold text-[#00475e] tracking-tight no-underline" style="text-decoration:none;color:#00475e;">BD Residence Mlýnská</a>
+  <a href="{% url 'index' %}" class="text-xl font-bold text-[#7b2d40] tracking-tight no-underline" style="text-decoration:none;color:#7b2d40;">BD Residence Mlýnská</a>
   <div class="hidden md:flex gap-8 items-center">
-    <a href="{% url 'index' %}" class="{% if active_page == 'index' %}text-[#00475e] border-b-2 border-[#00475e] pb-1{% else %}text-[#40484d] hover:text-[#00475e]{% endif %} tracking-tight transition-colors" style="text-decoration:none;">Domů</a>
-    <a href="{% url 'nastenka' %}" class="{% if active_page == 'nastenka' %}text-[#00475e] border-b-2 border-[#00475e] pb-1{% else %}text-[#40484d] hover:text-[#00475e]{% endif %} tracking-tight transition-colors" style="text-decoration:none;">Nástěnka</a>
-    <a href="{% url 'zakladni-info' %}" class="{% if active_page == 'zakladni-info' %}text-[#00475e] border-b-2 border-[#00475e] pb-1{% else %}text-[#40484d] hover:text-[#00475e]{% endif %} tracking-tight transition-colors" style="text-decoration:none;">Info</a>
-    <a href="{% url 'kontakty' %}" class="{% if active_page == 'kontakty' %}text-[#00475e] border-b-2 border-[#00475e] pb-1{% else %}text-[#40484d] hover:text-[#00475e]{% endif %} tracking-tight transition-colors" style="text-decoration:none;">Kontakty</a>
+    <a href="{% url 'index' %}" class="{% if active_page == 'index' %}text-[#7b2d40] border-b-2 border-[#7b2d40] pb-1{% else %}text-[#40484d] hover:text-[#7b2d40]{% endif %} tracking-tight transition-colors" style="text-decoration:none;">Domů</a>
+    <a href="{% url 'nastenka' %}" class="{% if active_page == 'nastenka' %}text-[#7b2d40] border-b-2 border-[#7b2d40] pb-1{% else %}text-[#40484d] hover:text-[#7b2d40]{% endif %} tracking-tight transition-colors" style="text-decoration:none;">Nástěnka</a>
+    <a href="{% url 'zakladni-info' %}" class="{% if active_page == 'zakladni-info' %}text-[#7b2d40] border-b-2 border-[#7b2d40] pb-1{% else %}text-[#40484d] hover:text-[#7b2d40]{% endif %} tracking-tight transition-colors" style="text-decoration:none;">Info</a>
+    <a href="{% url 'kontakty' %}" class="{% if active_page == 'kontakty' %}text-[#7b2d40] border-b-2 border-[#7b2d40] pb-1{% else %}text-[#40484d] hover:text-[#7b2d40]{% endif %} tracking-tight transition-colors" style="text-decoration:none;">Kontakty</a>
   </div>
   <div class="relative items-center gap-4 flex" id="settings-container">
-    <button class="flex items-center gap-2 text-[#40484d] hover:text-[#00475e] transition-all active:opacity-70" id="settings-button">
+    <button class="flex items-center gap-2 text-[#40484d] hover:text-[#7b2d40] transition-all active:opacity-70" id="settings-button">
       <span class="material-symbols-outlined">settings</span>
       <span class="hidden sm:inline font-medium text-sm">Nastavení</span>
     </button>
@@ -116,15 +116,15 @@
 <!-- Footer -->
 <footer class="w-full border-t-0 mt-20 bg-[#f1f4f3] flex flex-col md:flex-row justify-between items-center px-8 py-12 gap-4">
   <div class="flex flex-col gap-1">
-    <span class="font-bold text-[#00475e] text-sm">Bytové družstvo Residence Mlýnská</span>
+    <span class="font-bold text-[#7b2d40] text-sm">Bytové družstvo Residence Mlýnská</span>
     <p class="text-[#40484d] text-xs">© 2025 Bytové družstvo Residence Mlýnská. Všechna práva vyhrazena.</p>
     <p class="text-[#40484d]/60 text-[10px]">IČO: 244 48 541 | DIČ: CZ24448541</p>
   </div>
   <div class="flex flex-wrap justify-center gap-8 text-[#40484d] text-xs">
-    <a href="{% url 'zakladni-info' %}" class="hover:text-[#00475e] transition-colors opacity-80 hover:opacity-100" style="text-decoration:none;">Ochrana údajů</a>
-    <a href="{% url 'zakladni-info' %}" class="hover:text-[#00475e] transition-colors opacity-80 hover:opacity-100" style="text-decoration:none;">Stanovy</a>
-    <a href="{% url 'kontakty' %}" class="hover:text-[#00475e] transition-colors opacity-80 hover:opacity-100" style="text-decoration:none;">Kontakt</a>
-    <a href="/admin/" class="hover:text-[#00475e] transition-colors opacity-80 hover:opacity-100" style="text-decoration:none;">Přihlášení do admin</a>
+    <a href="{% url 'zakladni-info' %}" class="hover:text-[#7b2d40] transition-colors opacity-80 hover:opacity-100" style="text-decoration:none;">Ochrana údajů</a>
+    <a href="{% url 'zakladni-info' %}" class="hover:text-[#7b2d40] transition-colors opacity-80 hover:opacity-100" style="text-decoration:none;">Stanovy</a>
+    <a href="{% url 'kontakty' %}" class="hover:text-[#7b2d40] transition-colors opacity-80 hover:opacity-100" style="text-decoration:none;">Kontakt</a>
+    <a href="/admin/" class="hover:text-[#7b2d40] transition-colors opacity-80 hover:opacity-100" style="text-decoration:none;">Přihlášení do admin</a>
   </div>
 </footer>
 
