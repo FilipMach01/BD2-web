@@ -1,4 +1,4 @@
-# BD Kutná Hora – Strakoschova
+# Bytové družstvo Residence Mlýnská
 
 Webový portál Bytového družstva Kutná Hora Strakoschova.
 
